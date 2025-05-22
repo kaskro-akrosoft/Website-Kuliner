@@ -1,0 +1,162 @@
+/* Reset and base */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4ece4;
+    color: #4b2e23;
+    line-height: 1.6;
+    animation: fadeIn 1s ease-in;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  header {
+    background-color: #f4ece4;
+    padding: 1rem 2rem;
+    box-shadow: 0 3px 6px rgba(107, 69, 46, 0.3);
+  }
+  nav {
+    display: flex;
+    justify-content: space-between; /* push brand left and links right */
+    align-items: center;
+    max-width: 1200px; /* increase max width for wider container */
+    margin: 0 auto; /* center container horizontally */
+    padding: 1rem 2rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+  .brand {
+    font-weight: bold; /* Tebal */
+    font-size: 1.8rem; /* Ukuran besar */
+    color: orange; /* Warna oranye */
+    user-select: none; /* Tidak bisa diseleksi */
+    letter-spacing: 0.05em; /* Jarak antar huruf */
+    justify-content: flex-start;
+  }
+  
+  nav a {
+    color: #8b3a1a;
+    text-decoration: none;
+    margin: 0 1.8rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    position: relative;
+    transition: color 0.3s ease, transform 0.3s ease;
+    padding-bottom: 4px;
+  }
+  nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    background: #8b3a1a;
+    left: 50%;
+    bottom: 0;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+    border-radius: 2px;
+  }
+  nav a:hover,
+  nav a:focus {
+    color: #603813;
+    transform: scale(1.1);
+  }
+  nav a:hover::after,
+  nav a:focus::after {
+    width: 60%;
+  }
+  nav a[aria-current="page"] {
+    color: #603813;
+    font-weight: 900;
+  }
+  nav a[aria-current="page"]::after {
+    width: 60%;
+  }
+  main {
+    flex: 1;
+    max-width: 700px;
+    margin: 3rem auto 4rem auto;
+    padding: 0 1.5rem;
+    text-align: center;
+  }
+  h1 {
+    font-size: 2.5rem;
+    color: #5b3211;
+    margin-bottom: 1rem;
+  }
+  h2 {
+    font-size: 1.8rem;
+    color: #7a4426;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  p {
+    font-size: 1.2rem;
+    color: #4b2e23;
+    margin-bottom: 1.2rem;
+    line-height: 1.5;
+  }
+  .contact-info {
+    margin-top: 1rem;
+    font-size: 1.1rem;
+  }
+  .contact-info a {
+    color: #8b3a1a;
+    text-decoration: none;
+    font-weight: 700;
+    transition: color 0.3s ease;
+  }
+  .contact-info a:hover {
+    color: #603813;
+  }
+  footer {
+    position: relative;
+    background-image: url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=800&q=80');
+    background-size: cover;
+    background-position: center center;
+    color: #f4ece4;
+    text-align: center;
+    padding: 1.5rem 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    box-shadow: inset 0 0 0 100vw rgba(107, 69, 46, 0.6);
+  }
+  footer::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(107, 69, 46, 0.5);
+    z-index: 0;
+  }
+  footer * {
+    position: relative;
+    z-index: 1;
+  }
+  .copyright-symbol {
+    color: #f4ece4;
+    font-weight: 900;
+    margin-right: 0.3em;
+  }
+  @keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+  }
+  /* Responsive */
+  @media (max-width: 600px) {
+    main {
+      margin: 2rem 1rem 3rem 1rem;
+    }
+    h1 {
+      font-size: 2rem;
+    }
+    h2 {
+      font-size: 1.5rem;
+    }
+    p, .contact-info {
+      font-size: 1rem;
+    }
+  }
